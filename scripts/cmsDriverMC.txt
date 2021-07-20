@@ -1,0 +1,23 @@
+# MC 2018 from https://twiki.cern.ch/twiki/bin/view/CMS/PdmVLegacy2018Analysis
+cmsDriver.py step7 --filein file:MiniAOD.root --fileout file:NanoAOD.root --mc --eventcontent NANOAODSIM --datatier NANOAODSIM --conditions 106X_upgrade2018_realistic_v15_L1v1 --step NANO --nThreads 8 --era Run2_2018 --python_filename NANOAOD_2018_cfg.py -n 10 --no_exec --customise_commands="process.add_(cms.Service('InitRootHandlers', EnableIMT = cms.untracked.bool(False)))"
+
+# DATA 2018
+cmsDriver.py NANO -s NANO --nThreads 2 --data --era Run2_2018 --conditions 106X_dataRun2_v32 --eventcontent NANOEDMAOD --datatier NANOAOD --filein file:pippo.root -n 100 --python_filename=nano_Run2018.py --no_exec
+
+# MC 2017 from https://twiki.cern.ch/twiki/bin/view/CMS/PdmVLegacy2017Analysis
+cmsDriver.py step7 --filein file:MiniAOD.root --fileout file:NanoAOD.root --mc --eventcontent NANOAODSIM --datatier NANOAODSIM --conditions 106X_mc2017_realistic_v8 --step NANO --nThreads 8 --era Run2_2017,run2_nanoAOD_106Xv1 --python_filename NANOAOD_2017_cfg.py -n 10 --no_exec --customise_commands="process.add_(cms.Service('InitRootHandlers', EnableIMT = cms.untracked.bool(False)))"
+
+# DATA 2017
+cmsDriver.py NANO -s NANO --nThreads 2 --data --era Run2_2017,run2_nanoAOD_106Xv1 --conditions 106X_dataRun2_v32 --eventcontent NANOEDMAOD --datatier NANOAOD --filein file:pippo.root -n 100 --python_filename=nano_Run2017.py --no_exec --customise Configuration/DataProcessing/Utils.addMonitoring
+
+# MC 2016 preVFP from https://twiki.cern.ch/twiki/bin/viewauth/CMS/PdmVLegacy2016preVFPAnalysis
+cmsDriver.py step7 --filein file:MiniAOD.root --fileout file:NanoAOD.root --mc --eventcontent NANOAODSIM --datatier NANOAODSIM --conditions 106X_mcRun2_asymptotic_preVFP_v9 --step NANO --nThreads 8 --era Run2_2016_HIPM --python_filename NANOAOD_2016_cfg.py -n 10 --no_exec --customise_commands="process.add_(cms.Service('InitRootHandlers', EnableIMT = cms.untracked.bool(False)))"
+
+# DATA 2016 preVFP
+cmsDriver.py NANO -s NANO --nThreads 2 --data --era Run2_2016,run2_nanoAOD_106Xv1 --conditions 106X_dataRun2_v32 --eventcontent NANOEDMAOD --datatier NANOAOD --filein file:pippo.root -n 100 --python_filename=nano_Run2016.py --no_exec
+
+# MC 2016 postVFP from https://twiki.cern.ch/twiki/bin/viewauth/CMS/PdmVLegacy2016postVFPAnalysis
+cmsDriver.py step7 --filein file:MiniAOD.root --fileout file:NanoAOD.root --mc --eventcontent NANOAODSIM --datatier NANOAODSIM --conditions 106X_mcRun2_asymptotic_v13 --step NANO --nThreads 8 --era Run2_2016 --python_filename NANOAOD_2016_cfg.py -n 10 --no_exec --customise_commands="process.add_(cms.Service('InitRootHandlers', EnableIMT = cms.untracked.bool(False)))"
+
+# DATA 2016 postVFP
+cmsDriver.py NANO -s NANO --nThreads 2 --data --era Run2_2016,run2_nanoAOD_106Xv1 --conditions 106X_dataRun2_v32 --eventcontent NANOEDMAOD --datatier NANOAOD --filein file:pippo.root -n 100 --python_filename=nano_Run2016.py --no_exec
