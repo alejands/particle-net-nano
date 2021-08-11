@@ -13,6 +13,7 @@ process = cms.Process('NANO',Run2_2018)
 process.load('Configuration.StandardSequences.Services_cff')
 process.load('SimGeneral.HepPDTESSource.pythiapdt_cfi')
 process.load('FWCore.MessageService.MessageLogger_cfi')
+process.MessageLogger.cerr.FwkReport.reportEvery = 1000
 process.load('Configuration.EventContent.EventContent_cff')
 process.load('SimGeneral.MixingModule.mixNoPU_cfi')
 process.load('Configuration.StandardSequences.GeometryRecoDB_cff')
@@ -32,7 +33,7 @@ process.source = cms.Source("PoolSource",
 )
 
 process.options = cms.untracked.PSet(
-
+    wantSummary=cms.untracked.bool(True)
 )
 
 # Production Info
