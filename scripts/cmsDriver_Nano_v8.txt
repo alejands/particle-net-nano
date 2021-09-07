@@ -1,0 +1,23 @@
+# MC 2018 from https://twiki.cern.ch/twiki/bin/view/CMS/PdmVLegacy2018Analysis
+cmsDriver.py NANO -s NANO --filein file:MC_2018_MiniAOD.root --fileout file:MC_2018_NanoAOD.root --mc --eventcontent NANOAODSIM --datatier NANOAODSIM --conditions 106X_upgrade2018_realistic_v15_L1v1 --nThreads 1 --era Run2_2018,run2_nanoAOD_106Xv1 --python_filename MC_2018_NANOAOD_cfg.py -n -1 --customise_commands="process.add_(cms.Service('InitRootHandlers', EnableIMT = cms.untracked.bool(False)));process.MessageLogger.cerr.FwkReport.reportEvery=1000" --no_exec
+
+# DATA 2018
+cmsDriver.py NANO -s NANO --nThreads 1 --data --era Run2_2018,run2_nanoAOD_106Xv1 --conditions 106X_dataRun2_v32 --eventcontent NANOAOD --datatier NANOAOD --filein file:DATA_2018_MiniAOD.root --fileout file:DATA_2018_NanoAOD.root -n -1 --python_filename DATA_2018_NANOAOD_cfg.py --customise_commands="process.add_(cms.Service('InitRootHandlers', EnableIMT = cms.untracked.bool(False)));process.MessageLogger.cerr.FwkReport.reportEvery=1000" --no_exec
+
+# MC 2017 from https://twiki.cern.ch/twiki/bin/view/CMS/PdmVLegacy2017Analysis
+cmsDriver.py NANO -s NANO --filein file:MC_2017_MiniAOD.root --fileout file:MC_2017_NanoAOD.root --mc --eventcontent NANOAODSIM --datatier NANOAODSIM --conditions 106X_mc2017_realistic_v8 --nThreads 1 --era Run2_2017,run2_nanoAOD_106Xv1 --python_filename MC_2017_NANOAOD_cfg.py -n -1 --customise_commands="process.add_(cms.Service('InitRootHandlers', EnableIMT = cms.untracked.bool(False)));process.MessageLogger.cerr.FwkReport.reportEvery=1000" --no_exec
+
+# DATA 2017
+cmsDriver.py NANO -s NANO --nThreads 1 --data --era Run2_2017,run2_nanoAOD_106Xv1 --conditions 106X_dataRun2_v32 --eventcontent NANOAOD --datatier NANOAOD --filein file:DATA_2017_MiniAOD.root --fileout file:DATA_2017_NanoAOD.root -n -1 --python_filename DATA_2017_NANOAOD_cfg.py --customise Configuration/DataProcessing/Utils.addMonitoring --customise_commands="process.add_(cms.Service('InitRootHandlers', EnableIMT = cms.untracked.bool(False)));process.MessageLogger.cerr.FwkReport.reportEvery=1000" --no_exec
+
+# MC 2016 preVFP from https://twiki.cern.ch/twiki/bin/viewauth/CMS/PdmVLegacy2016preVFPAnalysis
+cmsDriver.py NANO -s NANO --filein file:MC_2016preVFP_MiniAOD.root --fileout file:MC_2016preVFP_NanoAOD.root --mc --eventcontent NANOAODSIM --datatier NANOAODSIM --conditions 106X_mcRun2_asymptotic_preVFP_v9 --nThreads 1 --era Run2_2016,run2_nanoAOD_106Xv1 --python_filename MC_2016preVFP_NANOAOD_cfg.py -n -1 --customise_commands="process.add_(cms.Service('InitRootHandlers', EnableIMT = cms.untracked.bool(False)));process.MessageLogger.cerr.FwkReport.reportEvery=1000" --no_exec
+
+# DATA 2016 preVFP
+cmsDriver.py NANO -s NANO --nThreads 1 --data --era Run2_2016,run2_nanoAOD_106Xv1 --conditions 106X_dataRun2_v32 --eventcontent NANOAOD --datatier NANOAOD --filein file:DATA_2016preVFP_MiniAOD.root --fileout file:DATA_2016preVFP_NanoAOD.root -n -1 --python_filename DATA_2016preVFP_NANOAOD_cfg.py --customise_commands="process.add_(cms.Service('InitRootHandlers', EnableIMT = cms.untracked.bool(False)));process.MessageLogger.cerr.FwkReport.reportEvery=1000" --no_exec
+
+# MC 2016 postVFP from https://twiki.cern.ch/twiki/bin/viewauth/CMS/PdmVLegacy2016postVFPAnalysis
+cmsDriver.py NANO -s NANO --filein file:MC_2016postVFP_MiniAOD.root --fileout file:MC_2016postVFP_NanoAOD.root --mc --eventcontent NANOAODSIM --datatier NANOAODSIM --conditions 106X_mcRun2_asymptotic_v13 --nThreads 1 --era Run2_2016,run2_nanoAOD_106Xv1 --python_filename MC_2016postVFP_NANOAOD_cfg.py -n -1 --customise_commands="process.add_(cms.Service('InitRootHandlers', EnableIMT = cms.untracked.bool(False)));process.MessageLogger.cerr.FwkReport.reportEvery=1000" --no_exec
+
+# DATA 2016 postVFP
+cmsDriver.py NANO -s NANO --nThreads 1 --data --era Run2_2016,run2_nanoAOD_106Xv1 --conditions 106X_dataRun2_v32 --eventcontent NANOAOD --datatier NANOAOD --filein file:DATA_2016postVFP_MiniAOD.root --fileout file:DATA_2016postVFP_NanoAOD.root -n -1 --python_filename DATA_2016postVFP_NANOAOD_cfg.py --customise_commands="process.add_(cms.Service('InitRootHandlers', EnableIMT = cms.untracked.bool(False)));process.MessageLogger.cerr.FwkReport.reportEvery=1000" --no_exec
