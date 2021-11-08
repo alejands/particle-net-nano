@@ -1,3 +1,5 @@
+Short manual to set up custom nanoaod production
+```
 # save starting directory
 cwd=$PWD
 # set cms software architecture
@@ -21,3 +23,4 @@ cd $CMSSW_BASE/src
 scram b -j 10
 # go back to starting directory
 cd $cwd
+```
