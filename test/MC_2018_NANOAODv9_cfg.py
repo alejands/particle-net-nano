@@ -2,7 +2,7 @@
 # using: 
 # Revision: 1.19 
 # Source: /local/reps/CMSSW/CMSSW/Configuration/Applications/python/ConfigBuilder.py,v 
-# with command line options: NANO -s NANO --filein file:MC_2018_MiniAODv2.root --fileout file:MC_2018_NanoAODv9.root --mc --eventcontent NANOAODSIM --datatier NANOAODSIM --conditions 106X_upgrade2018_realistic_v16_L1v1 --nThreads 4 --era Run2_2018,run2_nanoAOD_106Xv2 --python_filename MC_2018_NANOAODv9_cfg.py -n -1 --customise_commands=process.add_(cms.Service('InitRootHandlers', EnableIMT = cms.untracked.bool(False)));process.MessageLogger.cerr.FwkReport.reportEvery=10000 --no_exec
+# with command line options: NANO -s NANO --filein file:MC_2018_MiniAODv2.root --fileout file:MC_2018_NanoAODv9.root --mc --eventcontent NANOAODSIM --datatier NANOAODSIM --conditions 106X_upgrade2018_realistic_v16_L1v1 --nThreads 4 --era Run2_2018,run2_nanoAOD_106Xv2 --python_filename MC_2018_NANOAODv9_cfg.py -n -1 --customise_commands=process.add_(cms.Service('InitRootHandlers', EnableIMT = cms.untracked.bool(False)));process.NANOAODSIMoutput.fakeNameForCrab = cms.untracked.bool(True);process.MessageLogger.cerr.FwkReport.reportEvery=10000 --no_exec
 import FWCore.ParameterSet.Config as cms
 
 from Configuration.Eras.Era_Run2_2018_cff import Run2_2018
@@ -89,7 +89,7 @@ process = nanoAOD_customizeMC(process)
 
 # Customisation from command line
 
-process.add_(cms.Service('InitRootHandlers', EnableIMT = cms.untracked.bool(False)));process.MessageLogger.cerr.FwkReport.reportEvery=10000
+process.add_(cms.Service('InitRootHandlers', EnableIMT = cms.untracked.bool(False)));process.NANOAODSIMoutput.fakeNameForCrab = cms.untracked.bool(True);process.MessageLogger.cerr.FwkReport.reportEvery=10000
 # Add early deletion of temporary data products to reduce peak memory need
 from Configuration.StandardSequences.earlyDeleteSettings_cff import customiseEarlyDelete
 process = customiseEarlyDelete(process)
