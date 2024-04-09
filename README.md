@@ -28,3 +28,5 @@ scram b -j 8
 # go back to starting directory
 cd $cwd
 ```
+
+_Original version from [Michael Waßmer](https://github.com/michaelwassmer/CustomNanoProd/)_
